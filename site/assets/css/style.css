@@ -1,0 +1,9 @@
+.std_apartment_price{margin-top:10px;text-align:right;}
+.std_apartment_price>span{font-size:20px;color:#8A0829;}
+.apart_slide{position:absolute;max-width:420px;max-height:280px;overflow:hidden;}
+#ddcresslideshow{position: relative;height:200px;overflow:hidden;margin-bottom:10px;}
+#ddcresslideshow > div{position:absolute;width:100%;}
+#ddcresslideshow > div > img{width:95%;max-height:98%;}
+.datesok{color:#08088A;}
+.btn-book{border:#ffffff solid 3px;}
+.price_green{color:#448800;}
