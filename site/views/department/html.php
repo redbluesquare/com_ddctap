@@ -50,12 +50,12 @@ class DdctapViewsDepartmentHtml extends JViewHtml
     $layout = $this->getLayout();
     
     //retrieve task list from model
-    $departmentModel = new DdctapModelsDepartment();
+    //$departmentModel = new DdctapModelsDepartment();
  
     switch($layout) {
     	case "default":
     		default:
-    		$this->department = $departmentModel->listItems();
+    		//$this->department = $departmentModel->listItems();
     		//$this->_resListView = DdcbookitHelpersView::load('Apartments','_resentry','phtml');
     	break;
     }

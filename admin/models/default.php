@@ -2,7 +2,7 @@
 defined( '_JEXEC' ) or die( 'Restricted access' ); 
 jimport( 'joomla.filesystem.folder' );
  
-class DdcbookitModelsDefault extends JModelBase
+class DdctapModelsDefault extends JModelBase
 {
   protected $_state_set  = null;
   protected $_total       = null;
