@@ -8,6 +8,16 @@ class DdctapControllersDefault extends JControllerBase
     // Get the application
     $app = JFactory::getApplication();
  	
+    $params = JComponentHelper::getParams('com_ddctap');
+    if ($params->get('required_account') == 1)
+    {
+    	$user = JFactory::getUser();
+    	if ($user->get('guest'))
+    	{
+    		$app->redirect('index.php',JText::_('COM_DDCTAP_ACCOUNT_REQUIRED_MSG'));
+    	}
+    }
+    
     // Get the document object.
     $document     = JFactory::getDocument();
  

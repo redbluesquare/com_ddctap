@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="default_start">
+		<field
+			name="ddctap_holiday_id"
+			type="text"
+			label="COM_DDCTAP_ID"
+			description="COM_DDCTAP_ID_DESC"
+			readonly="true"
+			class="hidden"
+			hidden="true"
+			 />
+		<field
+			name="user_id"
+			type="sql"
+			default=""
+			label="COM_DDCTAP_NAME"
+			description="COM_DDCTAP_NAME_DESC"
+			query="SELECT id AS value, concat(name,', ',username) as user_id FROM #__users"
+		/>
+	</fieldset>
+	<fieldset name="dates_sae">
+		<field 
+			name="holidaystart"
+			type="calendar"
+			label="COM_DDCTAP_HOLIDAY_START"
+			description="COM_DDCTAP_HOLIDAY_START_DESC"
+			format="%d-%m-%Y"
+		/>
+		<field
+			name="holidayend"
+			type="calendar"
+			label="COM_DDCTAP_HOLIDAY_END"
+			description="COM_DDCTAP_HOLIDAY_END_DESC"
+			format="%d/%m/%Y"
+		/>
+	</fieldset>
+	<fieldset name="default_end">
+		<field
+			name="requested_by"
+			type="sql"
+			default=""
+			label="COM_DDCTAP_REQUESTED_BY"
+			description="COM_DDCTAP_REQUESTED_BY_DESC"
+			query="SELECT id AS value, concat(name,', ',username) as requested_by FROM #__users"
+		/>
+		<field
+			name="status"
+			type="text"
+			label=""
+			description="COM_DDCTAP_ID_DESC"
+			class="hidden"
+			default="0"
+			hidden="true"
+			 />
+	</fieldset>
+</form>

@@ -1,3 +1,4 @@
+input[type="text"].hidden{display:none;}
 .std_apartment_price{margin-top:10px;text-align:right;}
 .std_apartment_price>span{font-size:20px;color:#8A0829;}
 .apart_slide{position:absolute;max-width:420px;max-height:280px;overflow:hidden;}
