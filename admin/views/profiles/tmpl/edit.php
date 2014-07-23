@@ -1,12 +1,31 @@
 <?php
-defined( '_JEXEC' ) or die( 'Restricted access' );
+// No direct access
+defined('_JEXEC') or die('Restricted access');
+JHtml::_('behavior.tooltip');
+$app = JFactory::getApplication();
+$resadd = $app->input->get('task',null);
+
+ini_set('display_errors',1);
+error_reporting(E_ALL);
 
 ?>
-<h2><?php echo JText::_('COM_DDCTAP_BOOK_HOLIDAY'); ?></h2>
-<form>
-	<?php foreach($this->form->getFieldset("default_start") as $field): ?>
+<div class="span12">
+	<form action="<?php echo JRoute::_('index.php?option=com_ddctap&controller=profiles'); ?>"
+      method="post" name="adminForm" id="adminForm">
+        <fieldset class="adminform">
+                <legend><?php echo JText::_( 'COM_DDCTAP_PROFILE_DETAILS' ); ?></legend>
+                <table class="span12 table">
+                <tr><th><?php echo JText::_('COM_DDCTAP_NAME'); ?></th><td><?php echo $this->item->name; ?></td></tr>
+                <tr><th><?php echo JText::_('COM_DDCTAP_USERNAME'); ?></th><td><?php echo $this->item->username; ?></td></tr>
+                <tr><th><?php echo JText::_('COM_DDCTAP_EMAIL'); ?></th><td><?php echo $this->item->email; ?></td></tr>
+                </table>
+                <div class="clearfix"></div>
+                <div class="adminformlist">
+                	<div class="row-fluid">					
+							<?php foreach($this->form->getFieldset('profile_main') as $field): ?>
+							<div class="span3">
 								<?php if ($field->hidden):// If the field is hidden, just display the input.?>
-									<div><?php echo $field->input;?></div>
+									<?php echo $field->input;?>
 								<?php else:?>
 								<div class="control-group">
 									<div class="control-label">
@@ -20,11 +39,13 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 									</div>
 								</div>
 								<?php endif;?>
+							</div>
 							<?php endforeach; ?>
-							<div class="clearfix"></div>
-							<div class="">
+						</div>
+						<div class="clearfix"></div>
+							<div class="row-fluid">
 							<?php foreach($this->form->getFieldset("dates_sae") as $field): ?>
-								<div class="span4">
+								<div class="span3">
 								<?php if ($field->hidden):// If the field is hidden, just display the input.?>
 									<div><?php echo $field->input;?></div>
 								<?php else:?>
@@ -44,9 +65,11 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 							<?php endforeach; ?>
 							</div>
 							<div class="clearfix"></div>
-							<?php foreach($this->form->getFieldset("default_end") as $field): ?>
+						<div class="row-fluid">
+							<?php foreach($this->form->getFieldset('profile_rest') as $field): ?>
+							<div class="span3">
 								<?php if ($field->hidden):// If the field is hidden, just display the input.?>
-									<div><?php echo $field->input;?></div>
+									<?php echo $field->input;?>
 								<?php else:?>
 								<div class="control-group">
 									<div class="control-label">
@@ -60,10 +83,12 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 									</div>
 								</div>
 								<?php endif;?>
+							</div>
 							<?php endforeach; ?>
-	<button class="btn"><?php echo JText::_('COM_DDCTAP_REQUESTNOW'); ?></button>
+						</div>
 
-</form>
-<?php
-
-?>
+        </fieldset>
+                <input type="hidden" name="task" value="residence.edit" />
+                <?php echo JHtml::_('form.token'); ?>
+	</form>
+</div>

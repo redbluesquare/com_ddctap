@@ -5,7 +5,7 @@ defined('_JEXEC') or die('Restricted Access');
 JHtml::_('behavior.tooltip');
 ?>
 <div class="row-fluid">
-	<div class="span4 well"><a href="<?php echo JRoute::_('index.php?option=com_ddcbookit&view=residences'); ?>" ><?php echo JText::_('COM_DDCBOOKIT_MANAGER_RESIDENCE_EDIT')?></a></div>
+	<div class="span4 well"><a href="<?php echo JRoute::_('index.php?option=com_ddctap&view=profiles'); ?>" ><?php echo JText::_('COM_DDCTAP_MANAGER_PROFILE_EDIT')?></a></div>
 	<div class="span4 well"><a href="<?php echo JRoute::_('index.php?option=com_ddcbookit&view=proptypes'); ?>" ><?php echo JText::_('COM_DDCBOOKIT_MANAGER_PROPTYPE_EDIT')?></a></div>
 	<div class="span4 well"><a href="<?php echo JRoute::_('index.php?option=com_ddcbookit&view=apartments'); ?>"><?php echo JText::_('COM_DDCBOOKIT_APARTMENTS_MANAGE')?></a></div>
 </div>

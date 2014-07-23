@@ -2,7 +2,7 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-class DdcbookitHelpersStyle
+class DdctapHelpersStyle
 {
 	public static function load()
 	{
