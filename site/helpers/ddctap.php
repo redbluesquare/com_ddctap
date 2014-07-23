@@ -11,9 +11,9 @@
 defined('_JEXEC') or die;
 
 /**
- * Ddcreports helper.
+ * Ddctap helper.
  */
-class DdcbookitHelper
+class DdctapHelper
 {
 	/**
 	 * Configure the Linkbar.
@@ -22,7 +22,7 @@ class DdcbookitHelper
 	{
 		JHtmlSidebar::addEntry(
 			JText::_('COM_DDCBOOKIT_TITLE_UNITS'),
-			'index.php?option=com_ddcbookit&view=apartments',
+			'index.php?option=com_ddctap&view=apartments',
 			$vName == 'units'
 		);
 
@@ -39,7 +39,7 @@ class DdcbookitHelper
 		$user	= JFactory::getUser();
 		$result	= new JObject;
 
-		$assetName = 'com_ddcbookit';
+		$assetName = 'com_ddctap';
 
 		$actions = array(
 			'core.admin', 'core.manage', 'core.create', 'core.edit', 'core.edit.own', 'core.edit.state', 'core.delete'

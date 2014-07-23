@@ -2,7 +2,7 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-class DdcbookitHelpersView
+class DdctapHelpersView
 {
 	static function load($viewName, $layoutName='default', $viewFormat='html', $vars=null)
 	{
@@ -15,12 +15,12 @@ class DdcbookitHelpersView
 	    $paths = new SplPriorityQueue;
 	    $paths->insert(JPATH_COMPONENT . '/views/' . $viewName . '/tmpl', 'normal');
 
-	    $viewClass  = 'DdcbookitViews' . ucfirst($viewName) . ucfirst($viewFormat);
-	    $modelClass = 'DdcbookitModels' . ucfirst($viewName);
+	    $viewClass  = 'DdctapViews' . ucfirst($viewName) . ucfirst($viewFormat);
+	    $modelClass = 'DdctapModels' . ucfirst($viewName);
 
 	    if (false === class_exists($modelClass))
 	    {
-	      $modelClass = 'DdcbookitModelsDefault';
+	      $modelClass = 'DdctapModelsDefault';
 	    }
 
 	    $view = new $viewClass(new $modelClass, $paths);

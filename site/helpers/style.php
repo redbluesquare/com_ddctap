@@ -9,11 +9,11 @@ class DdcbookitHelpersStyle
 		$document = JFactory::getDocument();
 
 		//stylesheets
-		$document->addStylesheet(JURI::base().'components/com_ddcbookit/assets/css/style.css');
+		$document->addStylesheet(JURI::base().'components/com_ddctap/assets/css/style.css');
 		$document->addStyleSheet('//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
 
 		//javascripts
-		$document->addScript(JURI::base().'components/com_ddcbookit/assets/js/ddcbookit.js');
+		$document->addScript(JURI::base().'components/com_ddctap/assets/js/ddctap.js');
 
 	}
 }

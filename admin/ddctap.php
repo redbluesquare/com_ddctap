@@ -9,13 +9,13 @@ jimport( 'joomla.session.session' );
 JTable::addIncludePath(JPATH_COMPONENT.'/tables');
 
 //load classes
-JLoader::registerPrefix('Ddcbookit', JPATH_COMPONENT);
+JLoader::registerPrefix('Ddctap', JPATH_COMPONENT);
 
 //Load plugins
 //JPluginHelper::importPlugin('ddcbookit');
  
 //Load styles and javascripts
-DdcbookitHelpersStyle::load();
+DdctapHelpersStyle::load();
 
 //application
 $app = JFactory::getApplication();
@@ -24,7 +24,7 @@ $app = JFactory::getApplication();
 $controller = $app->input->get('controller','default');
 
 // Create the controller
-$classname  = 'DdcbookitControllers'.ucwords($controller);
+$classname  = 'DdctapControllers'.ucwords($controller);
 $controller = new $classname();
 
 // Perform the Request task

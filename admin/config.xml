@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
 	<fieldset name="component"
-		label="COM_DDCBOOKIT_OPTIONS"
-		description="COM_DDCBOOKIT_OPTIONS_DESC"
+		label="COM_DDCTAP_OPTIONS"
+		description="COM_DDCTAP_OPTIONS_DESC"
 	>
 
 		<field name="required_account" type="radio"
 			default="0"
 			class="btn-group"
-			label="COM_DDCBOOKIT_REQUIRED_ACCOUNT"
-			description="COM_DDCBOOKIT_REQUIRED_ACCOUNT_DESC">
+			label="COM_DDCTAP_REQUIRED_ACCOUNT"
+			description="COM_DDCTAP_REQUIRED_ACCOUNT_DESC">
 
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>
+		<field name="max_holidays" type="text"
+			default="15"
+			label="COM_DDCTAP_MAX_HOLIDAYS"
+			description="COM_DDCTAP_MAX_HOLIDAYS_DESC" />
 	</fieldset>
 	
 	<fieldset name="permissions"
@@ -22,7 +26,7 @@
 	>
 
 		<field name="rules" type="rules"
-			component="com_ddcbookit"
+			component="com_ddctap"
 			filter="rules"
 			validate="rules"
 			label="JCONFIG_PERMISSIONS_LABEL"

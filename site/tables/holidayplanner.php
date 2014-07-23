@@ -1,16 +1,17 @@
 <?php defined( '_JEXEC' ) or die( 'Restricted access' ); 
  
-class TableApartments extends JTable
+class TableHolidayplanner extends JTable
 {                      
   /**
   * Constructor
   *
   * @param object Database connector object
   */
-	var $ddcbookit_apartments_id 	= null;
+	var $ddctap_holiday_id 			= null;
+
 	
 	function __construct( &$db )
 	{
-    	parent::__construct('#__ddcbookit_apartments', 'ddcbookit_apartments_id', $db);
+    	parent::__construct('#__ddctap_holidayplanner', 'ddctap_holiday_id', $db);
   	}
 }

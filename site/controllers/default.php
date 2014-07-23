@@ -1,6 +1,6 @@
  <?php defined( '_JEXEC' ) or die( 'Restricted access' ); 
  
-class DdcbookitControllersDefault extends JControllerBase
+class DdctapControllersDefault extends JControllerBase
 {
   public function execute()
   {
@@ -11,9 +11,9 @@ class DdcbookitControllersDefault extends JControllerBase
     // Get the document object.
     $document     = JFactory::getDocument();
  
-    $viewName     = $app->input->getWord('view', 'Apartments');
+    $viewName     = $app->input->getWord('view', 'Department');
     $viewFormat   = $document->getType();
-    $layoutName   = $app->input->getWord('layout', 'residence');
+    $layoutName   = $app->input->getWord('layout', 'default');
  
     $app->input->set('view', $viewName);
  
@@ -21,12 +21,12 @@ class DdcbookitControllersDefault extends JControllerBase
     $paths = new SplPriorityQueue;
     $paths->insert(JPATH_COMPONENT . '/views/' . $viewName . '/tmpl', 'normal');
 
-    $viewClass  = 'DdcbookitViews' . ucfirst($viewName) . ucfirst($viewFormat);
-    $modelClass = 'DdcbookitModels' . ucfirst($viewName);
+    $viewClass  = 'DdctapViews' . ucfirst($viewName) . ucfirst($viewFormat);
+    $modelClass = 'DdctapModels' . ucfirst($viewName);
  
     if (false === class_exists($modelClass))
     {
-      $modelClass = 'DdcbookitModelsDefault';
+      $modelClass = 'DdctapModelsDefault';
     }
  
     $view = new $viewClass(new $modelClass, $paths);

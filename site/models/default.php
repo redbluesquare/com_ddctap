@@ -1,7 +1,7 @@
 <?php // no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' ); 
  
-class DdcbookitModelsDefault extends JModelBase
+class DdctapModelsDefault extends JModelBase
 {
   protected $__state_set  = null;
   protected $_total       = null;
@@ -20,7 +20,7 @@ class DdcbookitModelsDefault extends JModelBase
   	$app = JFactory::getApplication();
   	$ids = $app->input->get("cids",null,'array');
   	
-  	$id = $app->input->get("apartment_id");
+  	$id = $app->input->get("department_id");
   	if ( $id && $id > 0 ){
   		$this->id = $id;
   	}else if ( count($ids) == 1 ){
@@ -226,83 +226,5 @@ class DdcbookitModelsDefault extends JModelBase
   protected function populateState()
   {
   }
-	static function checkprice($residence, $proptype, $stayindays)
-	{
-		$check = false;
-		$checkprices = new DdcbookitModelsApartments();
-		$getprice = $checkprices->getPrices();
-		$numprices=count($getprice);
-		$i=0;
-		while($check==false){
-			if($getprice[$i]->residence_id==$residence){
-				if($getprice[$i]->proptype_id==$proptype){
-					if($stayindays<=$getprice[$i]->max_days){
-						$price=$getprice[$i]->price;
-						$check=true;
-					}
-				}
-			}
-			$i++;
-			if($i>=$numprices){
-				//$price=1;
-				$check=true;
-			}
-		}
-		return $price;
-	}
-	static function checkbooking($residence, $checkin, $checkout)
-	{	
-		$booking = new DdcbookitModelsBooking();
-		$booking = $booking->listItems();
-		foreach($booking as $item){
-			if($residence == $item->residence_id){
-				if($item->checkin!=null){
-					if((($checkin >= $item->checkin)
-						And ($checkin < $item->checkout))
-						
-						Or (($checkin < $item->checkin)
-						And ($checkout > $item->checkin)
-						And ($checkout <= $item->checkout))
-						
-						Or (($checkin < $item->checkin)					
-						And ($checkout > $item->checkin)
-						And ($checkout >= $item->checkout))
-						
-						Or (($checkout > $item->checkin)
-						And ($checkout <= $item->checkout))){
-							$apartment_id = $item->apart_id;
-							return $apartment_id;
-					}
-				}
-			}
-		}
-	}
-	/****************************************
-	 * Function for checking each apartment whether
-	 * it is available between two dates.
-	 ****************************************/
-	
-	static function checkmybooking($apartment_id, $checkin, $checkout)
-	{
-		$booking = new DdcbookitModelsBooking();
-		$booking = $booking->listItems();
-		foreach($booking as $item){
-			if($apartment_id == $item->apart_id){
-				if($item->checkin!=null){
-					if( (($checkin >= $item->checkin) || ($checkin < $item->checkout))
-							Or (($checkin < $item->checkin) || ($checkout > $item->checkin))
-							Or (($checkin < $item->checkin) || ($checkout > $item->checkin) || ($checkout <= $item->checkout))
-							Or (($checkout > $item->checkin) || ($checkout <= $item->checkout))
-					){
-						return $apartment_id;
-					}
-				}
-			}
-		}
-	
-	}
-
-	
-
-	
+		
 }

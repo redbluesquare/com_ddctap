@@ -1,6 +1,6 @@
 <?php defined( '_JEXEC' ) or die( 'Restricted access' ); 
  
-class DdcbookitViewsResidencesRaw extends JViewHtml
+class DdcrapViewsDepartmentRaw extends JViewHtml
 {
   function render()
   {
@@ -10,11 +10,11 @@ class DdcbookitViewsResidencesRaw extends JViewHtml
     $view = $app->input->get('view');
  
     //retrieve task list from model
-    $model = new DdcbookitModelsApartments();
+    $model = new DdctapModelsDepartment();
  
-    $this->apartment = $model->getItem($id,$view,FALSE);
+    $this->department = $model->getItem($id,$view,FALSE);
     
     //display
-    echo $this->apartment;
+    echo $this->department;
   } 
 }

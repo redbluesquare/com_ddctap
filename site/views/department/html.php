@@ -1,6 +1,6 @@
 <?php defined( '_JEXEC' ) or die( 'Restricted access' ); 
 
-class DdcbookitViewsResidencesHtml extends JViewHtml
+class DdctapViewsDepartmentHtml extends JViewHtml
 {
 	protected $data;
 	protected $form;
@@ -50,17 +50,13 @@ class DdcbookitViewsResidencesHtml extends JViewHtml
     $layout = $this->getLayout();
     
     //retrieve task list from model
-    $apartmentsModel = new DdcbookitModelsApartments();
-    $residenceModel = new DdcbookitModelsResidence();
-    $bookModel = new DdcbookitModelsBooking();
+    $departmentModel = new DdctapModelsDepartment();
  
     switch($layout) {
-    	case "residence":
+    	case "default":
     		default:
-    		$this->booking = $bookModel->listItems();
-    		$this->apartments = $apartmentsModel->listItems();
-    		$this->residence = $residenceModel->listItems();
-    		$this->_resListView = DdcbookitHelpersView::load('Apartments','_resentry','phtml');
+    		$this->department = $departmentModel->listItems();
+    		//$this->_resListView = DdcbookitHelpersView::load('Apartments','_resentry','phtml');
     	break;
     }
  

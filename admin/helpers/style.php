@@ -2,7 +2,7 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-class DdcbookitHelpersStyle
+class DdctapHelpersStyle
 {
 	public static function load()
 	{
@@ -12,7 +12,7 @@ class DdcbookitHelpersStyle
 		//$document->addStylesheet(JURI::base().'components/com_ddcbookit/assets/css/style.css');
 
 		//javascripts
-		$document->addScript(JURI::base().'components/com_ddcbookit/assets/js/ddcbookit.js');
+		$document->addScript(JURI::base().'components/com_ddctap/assets/js/ddctap.js');
 
 	}
 }

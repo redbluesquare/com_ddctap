@@ -1,6 +1,6 @@
 <?php defined( '_JEXEC' ) or die( 'Restricted access' ); 
  
-class DdcbookitViewsDashboardHtml extends JViewHtml
+class DdctapViewsDashboardHtml extends JViewHtml
 {
 	protected $data;
 	protected $form;
@@ -64,17 +64,17 @@ class DdcbookitViewsDashboardHtml extends JViewHtml
   }
   protected function addToolbar()
   {
-  	$canDo  = DdcbookitHelpersDdcbookit::getActions();
+  	$canDo  = DdctapHelpersDdctap::getActions();
   
   	// Get the toolbar object instance
   	$bar = JToolBar::getInstance('toolbar');
   
-  	JToolBarHelper::title(JText::_('COM_DDCBOOKIT_DASHBOARD'));
-  	JToolBarHelper::help('JHELP_DDCBOOKIT',true,'components/com_ddcbookit/help/en-GB/JHelp_Ddcbookit.php');
+  	JToolBarHelper::title(JText::_('COM_DDCTAP_DASHBOARD'));
+  	JToolBarHelper::help('JHELP_DDCTAP',true,'components/com_ddctap/help/en-GB/JHelp_Ddctap.php');
   
   	if ($canDo->get('core.admin'))
   	{
-  		JToolbarHelper::preferences('com_ddcbookit');
+  		JToolbarHelper::preferences('com_ddctap');
   	}
   }
 }
