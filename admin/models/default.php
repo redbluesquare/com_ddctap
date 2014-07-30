@@ -55,6 +55,8 @@ class DdctapModelsDefault extends JModelBase
   	{
   		$row->created = $date;
   	}
+  	if($this->data['userdatestart']!=null){$row->userdatestart = JHtml::date($this->data['userdatestart'],"Y-m-d");}
+  	if($this->data['userdateend']!=null){$row->userdateend = JHtml::date($this->data['userdateend'],"Y-m-d");}
   
   	// Make sure the record is valid
   	if (!$row->check())

@@ -51,3 +51,16 @@ CREATE TABLE IF NOT EXISTS `#__ddctap_entitled_holiday` (
   `modified` DATETIME NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY (`ddctap_ent_holiday_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS `#__ddctap_options` (
+  `ddctap_option_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100),
+  `description` text,
+  `catid` int(11) NOT NULL,
+  `created` DATETIME NOT NULL default '0000-00-00 00:00:00',
+  `modified` DATETIME NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY (`ddctap_option_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+  
+  
+  

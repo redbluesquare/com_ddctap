@@ -40,8 +40,10 @@ class DdctapHelpersDdctap
 	
 	public static function addSubmenu($submenu)
 	{
-// 		JSubMenuHelper::addEntry(JText::_('COM_DDCBOOKIT_APARTMENT_RESIDENCES'),
-// 		'index.php?option=com_ddcbookit&view=residences', $submenu == 'residences');
+		JSubMenuHelper::addEntry(JText::_('COM_DDCTAP_CATEGORIES'),
+		'index.php?option=com_categories&view=categories&extension=com_ddctap', $submenu == 'categories');
+ 		JSubMenuHelper::addEntry(JText::_('COM_DDCTAP_OPTIONS'),
+ 		'index.php?option=com_ddctap&view=ddctapoptions', $submenu == 'options');
 // 		JSubMenuHelper::addEntry(JText::_('COM_DDCBOOKIT_APARTMENTS'),
 // 		'index.php?option=com_ddcbookit&view=apartments', $submenu == 'apartments');
 // 		JSubMenuHelper::addEntry(JText::_('COM_DDCBOOKIT_APARTMENT_PROPTYPES'),

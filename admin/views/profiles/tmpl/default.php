@@ -8,10 +8,12 @@ JHtml::_('behavior.tooltip');
         <table class="adminlist">
                 <thead>
                 	<tr>
-                		<th width="10%"><?php echo JText::_('COM_DDCTAP_ID'); ?></th>
+                		<th width="3%"><?php echo JText::_('COM_DDCTAP_ID'); ?></th>
         				<th width="10%"><?php echo JText::_('COM_DDCTAP_NAME'); ?></th>
 						<th width="10%"><?php echo JText::_('COM_DDCTAP_USERNAME'); ?></th>
 						<th width="10%"><?php echo JText::_('COM_DDCTAP_JOBTITLE'); ?></th>
+						<th width="10%"><?php echo JText::_('COM_DDCTAP_START_TIME'); ?></th>
+						<th width="10%"><?php echo JText::_('COM_DDCTAP_FINISH_TIME'); ?></th>
 					</tr>
                 </thead>
                 <tfoot>
@@ -30,12 +32,19 @@ JHtml::_('behavior.tooltip');
                 	        <?php echo $item->username; ?>
                 		</td>
                 		<td>
-                			<?php echo $item->jobtitle; ?>
+                			<?php echo $item->jt; ?>
+                		</td>
+                		<td>
+                			<?php echo $item->starttime; ?>
+                		</td>
+                		<td>
+                			<?php echo $item->finishtime; ?>
                 		</td>
         			</tr>
 				<?php endforeach; ?>
                 </tbody>
         </table>
+        
         <div>
                 <input type="hidden" name="jform[table]" value="profiles" />
                 <input type="hidden" name="task" value="" />

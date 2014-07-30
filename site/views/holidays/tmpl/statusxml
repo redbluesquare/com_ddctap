@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+        <layout title="COM_DDCTAP_HOLIDAYS_VIEW_STATUS">
+                <message>
+                        <![CDATA[COM_DDCTAP_HOLIDAYS_VIEW_STATUS_DESC]]>
+                </message>
+        </layout>
+</metadata>
