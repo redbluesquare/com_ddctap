@@ -1,7 +1,7 @@
 <?php
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-class DdctapModelsProfile extends JModelForm
+class DdctapModelsDdctapoption extends JModelForm
 {
 	var $form    		= null;
 	var $_user_id 		= null;
@@ -21,7 +21,7 @@ class DdctapModelsProfile extends JModelForm
 			$params = JComponentHelper::getParams('com_ddctap');
 	
 			// Override the base user data with any data in the session.
-			$temp = (array) $app->getUserState('com_ddctap.profile.data', array());
+			$temp = (array) $app->getUserState('com_ddctap.ddctapoption.data', array());
 			foreach ($temp as $k => $v)
 			{
 				$this->data->$k = $v;
@@ -47,7 +47,7 @@ class DdctapModelsProfile extends JModelForm
 	public function getForm($data = array(), $loadData = true)
 	{
 		// Get the form.
-		$form = $this->loadForm('com_ddctap.profile', 'profile', array('control' => 'jform', 'load_data' => $loadData));
+		$form = $this->loadForm('com_ddctap.ddctapoption', 'ddctapoption', array('control' => 'jform', 'load_data' => $loadData));
 		if (empty($form))
 		{
 			return false;
@@ -58,15 +58,15 @@ class DdctapModelsProfile extends JModelForm
 	protected function loadFormData()
 	{
 		// Check the session for previously entered form data.
-		$data = JFactory::getApplication()->getUserState('com_ddctap.profiles.data', array());
+		$data = JFactory::getApplication()->getUserState('com_ddctap.ddctapoptions.data', array());
 		if (empty($data))
 		{
 			$jinput = JFactory::getApplication()->input;
 			$task = $jinput->get('task', "", 'STR' );
-			if($task != 'profile.add')
+			if($task != 'ddctapoptions.add')
 			{
-				$profileModel = new DdctapModelsProfiles();
-				$data = $profileModel->getItem();
+				$optionsModel = new DdctapModelsDdctapoptions();
+				$data = $optionsModel->getItem();
 				return $data;
 			}
 		}

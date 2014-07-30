@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
 	<fieldset name="profile_main">
-		<field name="jobtitle" type="list" default="" label="COM_DDCTAP_JOBTITLE" description="">
-  			<option value="0">COM_WAREHOUSE_OPERATIVE</option>
-  			<option value="1">COM_SENIOR_STRORES</option>
-  			<option value="2">COM_CONTROLLER</option>
-  			<option value="3">COM_ADMINISTRATOR</option>
-  			<option value="4">COM_MANAGER</option>
-		</field>
+		<field
+			name="jobtitle"
+			type="sql"
+			default=""
+			label="COM_DDCTAP_JOBTITLE"
+			description="COM_DDCTAP_JOBTITLE_DESC"
+			query="SELECT ddctap_option_id AS value, title as jobtitle FROM #__ddctap_options where catid = '12' "
+		/>
 		<field
 			name="directreport"
 			type="sql"
@@ -19,103 +20,74 @@
 	</fieldset>
 	<fieldset name="dates_sae">
 		<field 
-			name="datestart"
+			name="userdatestart"
 			type="calendar"
 			label="COM_DDCTAP_DATE_START"
 			description="COM_DDCTAP_DATE_START_DESC"
 			format="%d/%m/%Y"
 		/>
 		<field
-			name="dateend"
+			name="userdateend"
 			type="calendar"
 			label="COM_DDCTAP_DATE_END"
 			description="COM_DDCTAP_DATE_END_DESC"
 			format="%d/%m/%Y"
 		/>
+		<field 
+			name="starttime"
+			type="time"
+			label="COM_DDCTAP_TIME_START"
+			description="COM_DDCTAP_TIME_START_DESC"
+		/>
+		<field
+			name="finishtime"
+			type="time"
+			label="COM_DDCTAP_TIME_END"
+			description="COM_DDCTAP_TIME_END_DESC"
+		/>
 	</fieldset>
 	<fieldset name="profile_rest">
-	    <field name="parttime" type="list" default="" label="COM_DDCTAP_PARTTIME" description="">
-  			<option value="0">COM_DDCTAP_FULLTIME</option>
-  			<option value="1">COM_DDCTAP_PARTTIME</option>
-		</field>
-		<field name="rbgb" type="list" default="" label="COM_DDCTAP_RBGB" description="">
-  			<option value="0">COM_DDCTAP_BOSCH</option>
-  			<option value="1">COM_DDCTAP_AGENCY</option>
-		</field>
-		<field name="shift" type="list" default="" label="COM_DDCTAP_SHIFT" description="">
-  			<option value="0">COM_DDCTAP_DAYS</option>
-  			<option value="1">COM_DDCTAP_LATESHIFT</option>
-		</field>
-		<field name="dsp" type="list" default="" label="COM_DDCTAP_DSP" description="">
-  			<option value="0">COM_DDCTAP_A</option>
-  			<option value="1">COM_DDCTAP_B</option>
-  			<option value="2">COM_DDCTAP_C</option>
-		</field>
-	</fieldset>
-	<fieldset name="resside">
-		<field
-			name="address1"
-			type="text"
-			label="COM_DDCBOOKIT_APARTMENT_RESIDENCE_ADD1_LABEL"
-			description="COM_DDCBOOKIT_APARTMENT_RESIDENCE_ADD1_DESC"
+	    <field
+			name="parttime"
+			type="sql"
+			default=""
+			label="COM_DDCTAP_JOBTITLE"
+			description="COM_DDCTAP_JOBTITLE_DESC"
+			query="SELECT ddctap_option_id AS value, title as parttime FROM #__ddctap_options where catid = '13' "
 		/>
 		<field
-			name="address2"
-			type="text"
-			label="COM_DDCBOOKIT_APARTMENT_RESIDENCE_ADD2_LABEL"
-			description="COM_DDCBOOKIT_APARTMENT_RESIDENCE_ADD2_DESC"
+			name="rbgb"
+			type="sql"
+			default=""
+			label="COM_DDCTAP_JOBTITLE"
+			description="COM_DDCTAP_JOBTITLE_DESC"
+			query="SELECT ddctap_option_id AS value, title as rbgb FROM #__ddctap_options where catid = '14' "
 		/>
 		<field
-			name="town"
-			type="text"
-			label="COM_DDCBOOKIT_APARTMENT_RESIDENCE_TOWN_LABEL"
-			description="COM_DDCBOOKIT_APARTMENT_RESIDENCE_TOWN_DESC"
+			name="shift"
+			type="sql"
+			default=""
+			label="COM_DDCTAP_JOBTITLE"
+			description="COM_DDCTAP_JOBTITLE_DESC"
+			query="SELECT ddctap_option_id AS value, title as shift FROM #__ddctap_options where catid = '15' "
 		/>
 		<field
-			name="county"
-			type="text"
-			label="COM_DDCBOOKIT_APARTMENT_RESIDENCE_COUNTY_LABEL"
-			description="COM_DDCBOOKIT_APARTMENT_RESIDENCE_COUNTY_DESC"
+			name="dsp"
+			type="sql"
+			default=""
+			label="COM_DDCTAP_JOBTITLE"
+			description="COM_DDCTAP_JOBTITLE_DESC"
+			query="SELECT ddctap_option_id AS value, title as dsp FROM #__ddctap_options where catid = '16' "
 		/>
-		<field
-			name="post_code"
-			type="text"
-			label="COM_DDCBOOKIT_APARTMENT_RESIDENCE_POSTCODE_LABEL"
-			description="COM_DDCBOOKIT_APARTMENT_RESIDENCE_POSTCODE_DESC"
-		/>
-		<field
-			name="image_thumb"
-			type="media"
-			label="COM_DDCBOOKIT_APARTMENT_RESIDENCE_IMAGE_THUMB_LABEL"
-			description="COM_DDCBOOKIT_APARTMENT_RESIDENCE_IMAGE_THUMB_DESC"
-		/>
-		<field
-			name="main_image"
-			type="media"
-			label="COM_DDCBOOKIT_APARTMENT_RESIDENCE_MAIN_IMAGE_LABEL"
-			description="COM_DDCBOOKIT_APARTMENT_RESIDENCE_MAIN_IMAGE_DESC"
-		/>
-		<field name="state" type="list" label="JSTATUS"
-			description="JFIELD_PUBLISHED_DESC" class="chzn-color-state"
-			filter="intval" size="1" default="1"
-		>
-			<option value="1">
-				JPUBLISHED</option>
-			<option value="0">
-				JUNPUBLISHED</option>
-			<option value="2">
-				JARCHIVED</option>
-			<option value="-2">
-				JTRASHED</option>
-		</field>
 		<field
 			name="table"
 			type="text"
-			label="COM_DDCBOOKIT_APARTMENT_RESIDENCE_TABLE_LABEL"
-			description="COM_DDCBOOKIT_APARTMENT_RESIDENCE_TABLE_DESC"
+			label="COM_DDCTAP_PROFILE_TABLE_LABEL"
+			description="COM_DDCTAP_PROFILE_TABLE_DESC"
 			hidden="true"
 			class="hidden"
-			default="residences"
+			default="profile"
 		/>
+		
 	</fieldset>
 </form>

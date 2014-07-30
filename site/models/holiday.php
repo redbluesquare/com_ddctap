@@ -62,8 +62,8 @@ class DdctapModelsHoliday extends JModelForm
  		if (empty($data))
  		{
  			$jinput = JFactory::getApplication()->input;
- 			$task = $jinput->get('task', "", 'STR' );
- 			if($task == 'holidayupdate')
+ 			$task = $jinput->get('holiday_id', "", 'STR' );
+ 			if($task != Null)
 			{
  				$this->holsModel = new DdctapModelsHolidays();
  				$data = $this->holsModel->getItem();

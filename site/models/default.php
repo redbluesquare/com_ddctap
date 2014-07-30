@@ -20,7 +20,7 @@ class DdctapModelsDefault extends JModelBase
   	$app = JFactory::getApplication();
   	$ids = $app->input->get("cids",null,'array');
   	
-  	$id = $app->input->get("department_id");
+  	$id = $app->input->get("holiday_id");
   	if ( $id && $id > 0 ){
   		$this->id = $id;
   	}else if ( count($ids) == 1 ){
@@ -48,6 +48,14 @@ class DdctapModelsDefault extends JModelBase
   	{
   		$row->created = $date;
   	}
+  	if($data['holidaydatestart']!=null)
+  	{
+  		$row->holidaydatestart = JHtml::date(strtotime($data['holidaydatestart']),"Y-m-d");
+  	}
+  	if($data['holidaydateend']!=null)
+  	{
+  		$row->holidaydateend = JHtml::date(strtotime($data['holidaydateend']),"Y-m-d");
+  	}
   
   	// Make sure the record is valid
   	if (!$row->check())
@@ -59,7 +67,6 @@ class DdctapModelsDefault extends JModelBase
   	{
   		return false;
   	}
-  
   	return $row;
   
   }

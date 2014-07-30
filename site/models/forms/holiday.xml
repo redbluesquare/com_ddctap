@@ -21,19 +21,40 @@
 	</fieldset>
 	<fieldset name="dates_sae">
 		<field 
-			name="holidaystart"
+			name="holidaydatestart"
 			type="calendar"
 			label="COM_DDCTAP_HOLIDAY_START"
 			description="COM_DDCTAP_HOLIDAY_START_DESC"
-			format="%d-%m-%Y"
+			format="%d/%m/%Y"
 		/>
 		<field
-			name="holidayend"
+			name="holidaydateend"
 			type="calendar"
 			label="COM_DDCTAP_HOLIDAY_END"
 			description="COM_DDCTAP_HOLIDAY_END_DESC"
 			format="%d/%m/%Y"
 		/>
+	</fieldset>
+	<fieldset name="default_approve">
+		<field
+			name="status"
+			type="list"
+			label="COM_DDCTAP_STATUS"
+			description="COM_DDCTAP_STATUS_DESC"
+		>
+		<option value="0"> - Select - </option>
+		<option value="1">Approve</option>
+		<option value="2">Decline</option>
+		</field>
+		<field
+			name="table"
+			type="text"
+			label=""
+			description="COM_DDCTAP_HOLSPLANNER_DESC"
+			class="hidden"
+			default="holidayplanner"
+			hidden="true"
+			 />
 	</fieldset>
 	<fieldset name="default_end">
 		<field
@@ -51,6 +72,15 @@
 			description="COM_DDCTAP_ID_DESC"
 			class="hidden"
 			default="0"
+			hidden="true"
+		/>
+		<field
+			name="table"
+			type="text"
+			label=""
+			description="COM_DDCTAP_HOLSPLANNER_DESC"
+			class="hidden"
+			default="holidayplanner"
 			hidden="true"
 			 />
 	</fieldset>

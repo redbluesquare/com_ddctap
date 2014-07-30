@@ -18,6 +18,14 @@
 			default="15"
 			label="COM_DDCTAP_MAX_HOLIDAYS"
 			description="COM_DDCTAP_MAX_HOLIDAYS_DESC" />
+		<field
+			name="approval"
+			type="sql"
+			default=""
+			label="COM_DDCTAP_NAME"
+			description="COM_DDCTAP_NAME_DESC"
+			query="SELECT id AS value, concat(name,', ',username) as approval FROM #__users"
+		/>
 	</fieldset>
 	
 	<fieldset name="permissions"
